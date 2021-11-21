@@ -1,4 +1,4 @@
-package com.bridgelabz.Cab_Invoice_Generator;
+package com.bridgelabz.Cab_Invoice_Generator.service;
 
 import com.bridgelabz.Cab_Invoice_Generator.model.Ride;
 
@@ -21,4 +21,5 @@ public class InvoiceService {
 		return totalFare;
 
 	}
+
 }

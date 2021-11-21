@@ -1,7 +1,11 @@
 package com.bridgelabz.Cab_Invoice_Generator;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Test;
+
+import org.junit.Test;
+
+import com.bridgelabz.Cab_Invoice_Generator.model.Ride;
 
 public class InvoiceServiceTest {
 	@Test
@@ -22,4 +26,11 @@ public class InvoiceServiceTest {
 		Assert.assertEquals(5.0, totalFare, 0);
 	}
 
+	@Test
+	public void givenMultipleRides_ShouldReturnTotalOfTotalFare() {
+		Ride[] rides = { new Ride(2.0, 5), new Ride(5.0, 10), new Ride(0.1, 1), new Ride(20, 60) };
+		InvoiceService invoiceService = new InvoiceService();
+		double totalFare = invoiceService.calculateFare(rides);
+		Assert.assertEquals(260, totalFare, 0);
+	}
 }
